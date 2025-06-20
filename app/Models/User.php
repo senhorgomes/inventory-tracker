@@ -10,6 +10,7 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
+    // Factory is used to create fake data for testing.
     use HasFactory, Notifiable;
 
     /**
