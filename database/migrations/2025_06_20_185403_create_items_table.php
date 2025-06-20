@@ -18,7 +18,6 @@ return new class extends Migration
             $table->bigInteger('stock')->default(0);
             $table->bigInteger('price');
             $table->bigInteger('sku');
-            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }
