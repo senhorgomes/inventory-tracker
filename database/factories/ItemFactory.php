@@ -18,6 +18,12 @@ class ItemFactory extends Factory
     {
         return [
             //
+            'name' => $this->faker->name,
+            'description' => $this->faker->sentence,
+            'stock' => $this->faker->numberBetween(0, 100),
+            'price' => $this->faker->numberBetween(10, 40),
+            'sku' => $this->faker->unique()->numberBetween(100000, 999999),
+            'category_id' => Category::factory(),
         ];
     }
 }
