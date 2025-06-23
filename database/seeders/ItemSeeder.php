@@ -13,5 +13,6 @@ class ItemSeeder extends Seeder
     public function run(): void
     {
         //
+        Item::factory()->count(15)->has(Category::factory()->count(1))->create();
     }
 }
