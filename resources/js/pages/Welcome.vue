@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import type { Item } from '@/types';
 import { Head, Link } from '@inertiajs/vue3';
+interface Props {
+    items: Item[];
+}
+
+const props = defineProps<Props>();
+
+console.log(props.items);   
 </script>
 
 <template>

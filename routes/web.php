@@ -2,9 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Item;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    // Retrieve all items
+    $items = Item::all();
+    // Render the welcome page with the items
+    return Inertia::render('Welcome', ['items' => Item::all()]);
 })->name('home');
 
 Route::get('dashboard', function () {
