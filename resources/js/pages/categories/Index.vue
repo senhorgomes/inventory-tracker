@@ -5,9 +5,8 @@ interface Props {
     categories: Category[];
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 
-console.log(props.categories);
 </script>
 
 <template>
@@ -19,7 +18,7 @@ console.log(props.categories);
             </tr>
         </thead>
         <tbody>
-            <tr v-for="category in categories" :key="category.id" class="bg-white border-b">
+            <tr v-for="category in categories" :key="category.id" class="border-b">
                 <td class="px-4 py-2">{{ category.name }}</td>
                 <td class="px-4 py-2">{{ category.description }}</td>
             </tr>
