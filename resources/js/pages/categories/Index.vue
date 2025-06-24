@@ -6,6 +6,8 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+
+console.log(props.categories);
 </script>
 
 <template>
