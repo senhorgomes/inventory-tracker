@@ -1,7 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-
+use App\Models\Category;
+use App\Models\Item;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,6 +14,6 @@ class ItemSeeder extends Seeder
     public function run(): void
     {
         //
-        Item::factory()->count(15)->has(Category::factory()->count(1))->create();
+        Item::factory()->count(15)->create();
     }
 }

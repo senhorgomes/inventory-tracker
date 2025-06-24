@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Item>
@@ -23,7 +24,9 @@ class ItemFactory extends Factory
             'stock' => fake()->numberBetween(0, 100),
             'price' => fake()->numberBetween(10, 40),
             'sku' => fake()->numberBetween(100000, 999999),
-            'category_id' => Category::factory(),
+            'category_id' => function () {
+                return Category::inRandomOrder()->first()->id;
+            },
         ];
     }
 }
