@@ -10,7 +10,7 @@ class ItemController extends Controller
     //index page
     public function index()
     {
-        $items = Item::all();
+        $items = Item::with('category')->get();
         return Inertia::render('items/Index', ['items' => $items]);
     }
 }
