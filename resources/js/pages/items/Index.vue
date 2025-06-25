@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Item } from '@/types';
+import { Link } from '@inertiajs/vue3';
 
 interface Props {
     items: Item[];
@@ -10,6 +11,13 @@ defineProps<Props>();
 </script>
 
 <template>
+    <header class="flex justify-between items-center mb-4">
+        <h1 class="text-2xl font-bold text-center">Items</h1>
+        <nav>
+            <Link :href="route('categories.create')" class="bg-orange-200 text-black px-4 py-2 rounded-md hover:bg-orange-600 hover:text-white">Create Item</Link>
+            <Link :href="route('categories.create')" class="bg-orange-200 text-black px-4 py-2 rounded-md hover:bg-orange-600 hover:text-white">Create Category</Link>
+        </nav>
+    </header>
     <table class="w-full table-auto">
         <thead>
             <tr>
