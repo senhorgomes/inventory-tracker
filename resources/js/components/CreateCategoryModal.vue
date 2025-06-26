@@ -21,6 +21,7 @@ const submit = () => {
             <input type="text" v-model="form.name" placeholder="Category Name" />
             <input type="text" v-model="form.description" placeholder="Category Description" />
             <button type="submit">Create</button>
+            <button type="reset">Reset</button>
             <button type="reset">Cancel</button>
         </form>
     </div>
