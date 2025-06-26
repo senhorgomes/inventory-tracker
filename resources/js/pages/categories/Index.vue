@@ -6,11 +6,12 @@ interface Props {
     categories: Category[];
 }
 defineProps<Props>();
+// State for modal
 const showModal = ref(false)
 </script>
 
 <template>
-    <CreateCategoryModal v-if="showModal" @cancel="showModal = false"/>
+    <CreateCategoryModal v-if="showModal" @close="showModal = false"/>
     <table class="w-full table-auto">
         <header class="flex justify-between items-center mb-4">
         <h1 class="text-2xl font-bold text-center">Items</h1>
