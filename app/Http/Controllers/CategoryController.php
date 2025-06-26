@@ -19,4 +19,11 @@ class CategoryController extends Controller
     {
         return Inertia::render('categories/Create');
     }
+
+    // Create new category aka store
+    public function store(Request $request)
+    {
+        Category::create($request->all());
+        return redirect()->route('categories.index');
+    }
 }
