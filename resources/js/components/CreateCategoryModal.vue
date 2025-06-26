@@ -1,22 +1,28 @@
-<template>
-    <div>
-        <h2>Create Category</h2>
-        <input v-model="name" placeholder="Category Name" />
-        <input v-model="description" placeholder="Category Description" />
-        <button @click="createCategory">Create</button>
-        <button @click="emit('cancel')">Cancel</button>
-    </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const name = ref('');
-const description = ref('');
+import { Head, useForm, Link } from "@inertiajs/vue3";
 
-const emit = defineEmits(['create', 'cancel']);
 
-const createCategory = () => {
-    emit('create', { name: name.value, description: description.value });
-};
+const form = useForm({
+    name: '',
+    description: '',
+});
+
+const submit = () => {
+    form.post(route('categories.create'));
+}
 </script>
+
+<template>
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center">
+        <h2>Create Category</h2>
+        <form @submit.prevent="submit">
+            <input type="text" v-model="form.name" placeholder="Category Name" />
+            <input type="text" v-model="form.description" placeholder="Category Description" />
+            <button type="submit">Create</button>
+            <button type="reset">Cancel</button>
+        </form>
+    </div>
+</template>
+
